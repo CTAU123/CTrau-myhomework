@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import UIKit
+
+//Control Flow
+
+var scores: [Float32] = [Float32]()
+
+scores = [0.4,0.7,0.6,0.6,0.5]
+
+var highs  = [Float32]()
+
+var average:Float32 = 0.0
+
+for score in scores{
+    if score &gt;= 0.89999
+    {
+        highs.append(score)
+    }
+    average += score
+}
+
+print(highs)
+average = average / Float32(scores.count)
+print(average)
+
+    //reset values
+highs = []
+average = 0.0
+
+for score in scores where score &gt;= 0.8999
+{
+    highs.append(score)
+}
+
+print(highs)
+
+    //do a for in strings
+for char in "Hello World"
+{
+    print(char)
+}
+
+
+//Switch case
+let veggie = "red pepper"
+
+switch veggie{
+case "celery":
+    print(("green"))
+case "cucumber","tomato":
+    print(("sandwich"))
+case let x where x.hasSuffix("pepper"):
+    print(("spicy \(x)"))
+default:
+    print(("soup"))
+    
+}
+
+
+let approxCount = 62
+
+let countThings = "moons orbiting Saturn"
+
+let naturalCount:String
+
+switch approxCount{
+case 0:
+    naturalCount = "none"
+case 1..&lt;5:
+    naturalCount = "few"
+default:
+    naturalCount = "too many"
+}
+
+print("There're \(naturalCount) \(countThings)")
+
+    //While loop
+var n = 2
+while n &lt; 100{
+    n += 2
+}
+
+var m = 2
+repeat{
+    m += 2
+}while m &lt; 100
+
+print(m)
+
+    //Fibonacci practice
+func fib (start:Int, step: Int)-&gt; [Int]
+{
+    //guard isFib(n:start) else { return [] }
+    
+    let input = Double(start)
+    
+    let sqRT = ((1 + sqrt(5)) / 2)
+    let p = (input / sqRT).rounded()
+    let prev = Int(p)
+    
+    let next = prev + start
+    var array = [start,next]
+    
+    while array.count &lt; step
+    {
+        array.append(array[array.count - 1] + array[array.count - 2])
+    }
+    
+    return array
+    
+}
+
+print(fib(start: 8, step: 6))
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1651}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>
