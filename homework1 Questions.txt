@@ -1,0 +1,51 @@
+﻿## Questions:
+What is the difference between var and let?
+        let is a constant
+        var is a variable that can be changed
+
+
+What is an optional?
+        a declaration that handles a unidentified value
+
+
+What is optional chaining vs optional binding?
+        chaining - process of querying and calling properties on a optional that may be nil
+        binding - process to find out if an optional contains a value and make it a temporary constant or variable
+
+
+What are the different ways to unwrap an optional? How do they work? Are they safe?
+        - You can unwrap an optional automatically or forced (both require a exclamation mark)
+        - Forced unwrapping first requires an optional to be declared, and then unwrap it at the end of the variable
+        - Automatic unwrapping declares an optional using an "!" instead of an "?"
+        - Both are considered safe to use
+
+
+What is a closure?
+        self-contained blocks of functions; constants / variables called in closures can be passed around in the code
+
+
+What is the difference between a class and a struct?
+        Structures are used by default to represent common data, notably for smaller portions of code that don't reflect the entire app.
+        Classes are used for controlling the whole identity of data, especially when using Objective-C
+
+
+What is the syntax '??' do?
+        Nil-Coalescing Operator - unwraps an optional if it contains a value or returns a default value if the optional is nil
+
+
+What is a tuple?
+        Type of value which groups multiple values of any type in a single compound value; notable examples in http status code
+
+
+What is Any vs AnyObject?
+        - Any represents an instance of any type along with function types
+        - AnyObject represents and instance of any CLASS type
+
+
+What is a protocol?
+        a blueprint of sort of methods (such as classes, structures, and enums) that is used to suit a piece of functionality and can be
+        adopted by a method to provide implementation of said method's requirements (conforms to the protocol)
+
+
+What is Delegation
+        Design pattern that enables a construct to delegate (or hand off) its actions to an another instance type
