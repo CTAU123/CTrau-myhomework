@@ -8,22 +8,52 @@
 			<key>ModifiedContent</key>
 			<string>import MapKit
 
-//Bracket work
+//Bracket work, Colton Trau
 func bracket(s: String) -&gt; Bool///take string, return a bool
 {
-    let patternCheck:[String] 
-    patternCheck = ["()","()[]","()[]{}"]
-    
-    
-    for i in 0..&lt;patternCheck.count
+    if s.isEmpty//return false if array is empty
     {
-        if (s == patternCheck[i])
+        return false
+    }
+    
+    //Making an empty string array to put input in; acting as our stack
+    var patternCheck:[String]
+    patternCheck = []
+    //patternCheck = ["()","()[]","()[]{}"]
+    
+    //use i variable for a forloop going through input s
+    for i in s
+    {
+        let i  = String(i) //conver i as a constant String taken from s
+        switch i 
         {
-            return true
+        //when we encounter openings, we add the respecting closings to the stack patternCheck with the append method
+        case "(": patternCheck.append(")")
+        case "[": patternCheck.append("]")
+        case "{": patternCheck.append("}")
+        // in the case of encountering closings
+        default:
+            //set up a constant taking the current last element of the stack 
+            let lastC = patternCheck.last
+            
+            //we check if last character of the patternCheck stack we apprended
+            /*
+             Example
+             we got (, we added ) to the stack; so the last elemnent of the stack at this time is )
+             and then we check the element we are reading being ) equates to )
+             */
+            if lastC == i
+            {
+                patternCheck.removeLast()//We then remove the element from the stack and continue the for loop until the patternCheck stack is empty; we want patternCheck to be empty if we want the test case to be true
+            }
+            else
+            {
+                return false;//immediate Failure state if the elements do not equate
+            }
         }
     }
     
-    return false
+    return patternCheck.isEmpty//Return true if the patternCheck stack is empty
     
     
 }
@@ -32,11 +62,13 @@ print("Test 1 \(bracket(s: "()"))")
 print("Test 2 \(bracket(s: "()[]{}"))")
 print("Test 3 \(bracket(s: "(]"))")
 print("Test 4 \(bracket(s: "[]"))")
+print("Test 5 \(bracket(s: "({})"))")
+print("Test 6 \(bracket(s: "{[)(]}"))")
 
 //
 </string>
 			<key>ModifiedRange</key>
-			<string>{1, 489}</string>
+			<string>{1, 2047}</string>
 			<key>OriginalContent</key>
 			<string></string>
 			<key>OriginalRange</key>
